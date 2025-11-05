@@ -1,0 +1,58 @@
+[INFO] Job started on Wed Nov  5 16:14:40 IST 2025
+[INFO] Host: node2
+[INFO] CUDA info:
+Wed Nov  5 16:14:40 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.86.10              Driver Version: 570.86.10      CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L40S                    Off |   00000000:AB:00.0 Off |                  Off |
+| N/A   45C    P0             96W /  350W |   43627MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA L40S                    Off |   00000000:BD:00.0 Off |                  Off |
+| N/A   46C    P0             97W /  350W |   43627MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A          248705      C   VLLM::Worker_TP0                      43618MiB |
+|    1   N/A  N/A          248707      C   VLLM::Worker_TP1                      43618MiB |
++-----------------------------------------------------------------------------------------+
+[INFO] HF login OK
+[INFO] max_memory (GPU-only): {0: '6GiB', 1: '6GiB'}
+[INFO] Dtype: torch.float16
+[INFO] Device map: {'model.embed_tokens': 0, 'model.layers.0': 0, 'model.layers.1': 0, 'model.layers.2': 0, 'model.layers.3': 0, 'model.layers.4': 0, 'model.layers.5': 0, 'model.layers.6': 0, 'model.layers.7': 0, 'model.layers.8': 1, 'model.layers.9': 1, 'model.layers.10': 1, 'model.layers.11': 1, 'model.layers.12': 1, 'model.layers.13': 1, 'model.layers.14': 1, 'model.layers.15': 1, 'model.layers.16': 1, 'model.layers.17': 1, 'model.layers.18': 1, 'model.layers.19': 1, 'model.layers.20': 1, 'model.layers.21': 1, 'model.layers.22': 1, 'model.layers.23': 1, 'model.layers.24': 1, 'model.layers.25': 1, 'model.layers.26': 1, 'model.layers.27': 1, 'model.layers.28': 1, 'model.layers.29': 1, 'model.layers.30': 1, 'model.layers.31': 1, 'model.norm': 1, 'model.rotary_emb': 1, 'lm_head': 1}
+[INFO] Loaded meta-llama/Meta-Llama-3.1-8B-Instruct | hidden=4096 | total_layers=32 | gated_layers=[16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+[WARN] Local toxicity fallback unavailable: unitary/toxicity-bert is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+[INFO] Loading training datasets: Anthropic/hh-rlhf + facebook/belebele (+ optional Alpaca)
+[INFO] Anthropic/hh-rlhf prompts: 0
+[WARN] Failed to load facebook/belebele: Config name is missing.
+Please pick one among the available configs: ['acm_Arab', 'arz_Arab', 'ceb_Latn', 'fin_Latn', 'hin_Deva', 'ita_Latn', 'khm_Khmr', 'lvs_Latn', 'npi_Deva', 'pol_Latn', 'slv_Latn', 'swe_Latn', 'tso_Latn', 'xho_Latn', 'afr_Latn', 'asm_Beng', 'ces_Latn', 'fra_Latn', 'hin_Latn', 'jav_Latn', 'kin_Latn', 'mal_Mlym', 'npi_Latn', 'por_Latn', 'sna_Latn', 'swh_Latn', 'tur_Latn', 'yor_Latn', 'als_Latn', 'azj_Latn', 'ckb_Arab', 'fuv_Latn', 'hrv_Latn', 'jpn_Jpan', 'kir_Cyrl', 'mar_Deva', 'nso_Latn', 'snd_Arab', 'tam_Taml', 'ukr_Cyrl', 'zho_Hans', 'amh_Ethi', 'bam_Latn', 'dan_Latn', 'gaz_Latn', 'hun_Latn', 'kac_Latn', 'kor_Hang', 'mkd_Cyrl', 'nya_Latn', 'ron_Latn', 'som_Latn', 'tel_Telu', 'urd_Arab', 'zho_Hant', 'apc_Arab', 'ben_Beng', 'deu_Latn', 'grn_Latn', 'hye_Armn', 'kan_Knda', 'lao_Laoo', 'mlt_Latn', 'ory_Orya', 'rus_Cyrl', 'sot_Latn', 'tgk_Cyrl', 'urd_Latn', 'zsm_Latn', 'arb_Arab', 'ben_Latn', 'ell_Grek', 'guj_Gujr', 'ibo_Latn', 'kat_Geor', 'lin_Latn', 'mri_Latn', 'pan_Guru', 'shn_Mymr', 'spa_Latn', 'tgl_Latn', 'uzn_Latn', 'zul_Latn', 'arb_Latn', 'bod_Tibt', 'eng_Latn', 'hat_Latn', 'ilo_Latn', 'kaz_Cyrl', 'lit_Latn', 'mya_Mymr', 'pbt_Arab', 'sin_Latn', 'srp_Cyrl', 'tha_Thai', 'vie_Latn', 'ars_Arab', 'bul_Cyrl', 'est_Latn', 'hau_Latn', 'ind_Latn', 'kea_Latn', 'lug_Latn', 'nld_Latn', 'pes_Arab', 'sin_Sinh', 'ssw_Latn', 'tir_Ethi', 'war_Latn', 'ary_Arab', 'cat_Latn', 'eus_Latn', 'heb_Hebr', 'isl_Latn', 'khk_Cyrl', 'luo_Latn', 'nob_Latn', 'plt_Latn', 'slk_Latn', 'sun_Latn', 'tsn_Latn', 'wol_Latn']
+Example of usage:
+	`load_dataset('facebook/belebele', 'acm_Arab')`
+[INFO] Utility (Alpaca): 15000
+[INFO] Final TRAIN_POOL size: 2000
+[INFO] Loading test dataset: ToxicityPrompts/RTP-LX …
+[INFO] RTP-LX size: 30253
+[INFO] Eval set size=500 (target=500)
+[INFO] Training for 1000 steps …
+[INFO] Training complete → meta_train_log.csv
+[INFO] Evaluating on first 500 RTP-LX prompts …
+[INFO] Eval complete → meta_eval_results.csv
+
+=== SUMMARY ===
+Mean baseline: 0.238045390655182
+Mean patched : 0.12588081606626
+Δtox (base - patched): 0.11216457458892198
+[EN] n=250 base=0.162 patched=0.108 Δ=0.055
+[HI] n=250 base=0.314 patched=0.144 Δ=0.169
+[INFO] Job finished on Wed Nov  5 17:15:25 IST 2025
